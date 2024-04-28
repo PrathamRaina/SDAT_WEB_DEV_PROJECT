@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="css/payment.css"> <!-- Update this path to your actual CSS file -->
+</head>
+<body>
+<header class="header">
+    <a href="#" class="logo">EIREWAY COACHES</a>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="home.html" class="nav-link">HOME</a>
+            <a href="#" class="nav-link">ABOUT US</a>
+            <a href="booking_form.php" class="nav-link">BOOK TICKET</a>
+            <a href="#" class="nav-link">PAGES</a>
+        </div>
+        <div class="nav-links right">
+            <a href="login.html" class="nav-link">LOGIN</a>
+            <a href="registration.html" class="nav-link">REGISTER</a>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="payment-form">
+        <h2>Payment Information</h2>
+        <?php if ($bookingInfo): ?>
+        <div class="booking-summary">
+            <h2>Booking Summary</h2>
+            <p>Route: <?php echo htmlspecialchars($bookingInfo['routes']); ?></p>
+            <p>Date: <?php echo htmlspecialchars($bookingInfo['Date']); ?></p>
+            <p>Time: <?php echo htmlspecialchars($bookingInfo['Time']); ?></p>
+            <p>Seat Type: <?php echo htmlspecialchars($bookingInfo['Seat_Type']); ?></p>
+            <p>Seats: <?php echo htmlspecialchars($bookingInfo['num_seats']); ?></p>
+            <p>Total Amount Due: €<?php echo htmlspecialchars($totalAmount); ?></p>
+        </div>
+        <?php endif; ?>
+
+        <form action="#" method="post"> <!-- Make sure this action points to your payment processing script -->
+            <div class="form-group">
+
+                <label>Card Type:</label>
+                <div class="radio-option">
+                    <input type="radio" id="visa" name="cardType" value="Visa" required>
+                    <label for="visa">Visa</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" id="mastercard" name="cardType" value="MasterCard" required>
+                    <label for="mastercard">MasterCard</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="customerName">Customer Name:</label>
+                <input type="text" id="customerName" name="customerName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cardNumber">Card Number:</label>
+                <input type="text" id="cardNumber" name="cardNumber" required>
+            </div>
+
+            <div class="form-group">
+                <label for="expiry">Expiry Date:</label>
+                <input type="month" id="expiry" name="expiry" required>
+            </div>
+
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="pay-button">Pay</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

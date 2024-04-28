@@ -1,0 +1,200 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    background: #FFA07A; /* Light orange color for the header */
+    color: #800000; /* Maroon color for the text */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: black; /* Maroon color for the logo */
+    text-decoration: none;
+    font-size: 40px;
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 2;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links.right {
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.nav-link {
+    color: black; /* Maroon color for the nav-links */
+    text-decoration: none;
+    padding: 5px 15px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fff; /* White color on hover */
+    background-color: #800000; /* Maroon background on hover */
+}
+/* Regular styles for desktop */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    color: #800000;
+    text-decoration: none;
+    padding: 5px 15px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center items vertically */
+    }
+
+    .nav-links.right {
+        justify-content: center; /* Center items horizontally */
+    }
+
+    .nav-link {
+        margin: 5px 0; /* Add margin between links */
+    }
+}
+
+/* Style for the container that holds the form */
+.container {
+    display: flex;
+    justify-content: center; /* Center the form horizontally */
+    align-items: center; /* Center the form vertically */
+    height: 100%; /* Take full height of the viewport */
+    position: relative; /* Needed for the pseudo-element */
+    text-align: center; /* Align text to the center */
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/bus_background.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px); /* Apply blur directly to this pseudo-element */
+    z-index: -1; /* Place it behind the content of .container */
+}
+
+/* Style for the actual form */
+.registration-form {
+    background: rgba(255, 255, 255, 0.6); /* Slight transparency */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Maximum width of the form */
+    margin: auto; /* Center the form in the container */
+}
+
+
+/* Style for form inputs and button */
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"],
+.registration-form button {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Increased font size for better readability */
+    font-weight: bold;
+}
+.registration-form h2 {
+    color: #800000; /* Maroon color to match the theme */
+    margin-bottom: 40px;
+}
+
+.registration-form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.registration-form label {
+    display: block;
+    color:#800000; /* Maroon color for labels */
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Style for the submit button */
+.registration-form button {
+    background-color: black; /* Maroon background */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.registration-form button:hover {
+    background-color: #b30000; /* Darker maroon on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .registration-form {
+        width: 90%; /* Slightly smaller width on smaller screens */
+    }
+}
+/* Apply box-sizing to all elements for consistency */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Adjustments to the form and input fields */
+.registration-form {
+    /* Other styles remain unchanged */
+    box-sizing: border-box; /* Include padding and border in the width and height */
+}
+
+.registration-form button {
+    /* Other styles remain unchanged */
+    width: 100%; /* Ensures button doesn't overflow */
+    padding: 10px 0; /* Padding top and bottom, no left and right padding */
+}
+
+/* Ensure the container has no padding or margins that cause the form to shift */
+.container {
+    padding: 0;
+    margin: 0;
+    /* Other styles remain unchanged */
+}

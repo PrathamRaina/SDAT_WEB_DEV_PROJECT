@@ -1,0 +1,186 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    background: #FFA07A; /* Light orange color for the header */
+    color: #800000; /* Maroon color for the text */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: black; /* Maroon color for the logo */
+    text-decoration: none;
+    font-size: 40px;
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 2;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links.right {
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.nav-link {
+    color: black; /* Maroon color for the nav-links */
+    text-decoration: none;
+    padding: 5px 15px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fff; /* White color on hover */
+    background-color: #800000; /* Maroon background on hover */
+}
+/* Regular styles for desktop */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    color: #800000;
+    text-decoration: none;
+    padding: 5px 15px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center items vertically */
+    }
+
+    .nav-links.right {
+        justify-content: center; /* Center items horizontally */
+    }
+
+    .nav-link {
+        margin: 5px 0; /* Add margin between links */
+    }
+}
+
+/* Make sure to adjust the rest of your styles to accommodate these changes */
+.container {
+    position: relative;
+    height: 100%;
+    /* Remove the background-image here if you use the pseudo-element for the background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden; /* This ensures the blur does not bleed outside the container */
+}
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/bus_background.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px); /* Apply blur directly to this pseudo-element */
+    z-index: -1; /* Place it behind the content of .container */
+}
+.payment-form {
+    background: rgba(255, 255, 255, 0.6); /* White background for visibility */
+    padding: 40px; /* More padding for a better layout */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    max-width: 400px; /* Maximum width of the form */
+    width: 100%; /* Make it responsive */
+    margin: auto; /* Centering for older browsers */
+    text-align: left; /* Align text to the left */
+    color: maroon;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.form-group {
+    margin-bottom: 1em; /* Space out form groups */
+}
+
+.form-group label {
+    display: block; /* Ensure labels are on their own line */
+    margin-bottom: .5em; /* Small margin for the label */
+    color: #333; /* Darker text for readability */
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="month"],
+.form-group input[type="number"],
+.form-group input[type="radio"],
+.form-group input[type="password"] {
+    width: 100%; /* Full width */
+    padding: 10px; /* Adequate padding */
+    margin-bottom: 10px; /* Space after the inputs */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px; /* Slightly rounded corners for the input fields */
+}
+.radio-option {
+    display: inline-block; /* Align radio buttons and labels in a row */
+    margin-right: 10px; /* Space between the radio options */
+}
+
+.radio-option label {
+    margin-left: 5px; /* Small space between the radio button and the label text */
+}
+
+
+/* Style the submit button to fit the theme */
+.pay-button {
+    background-color: #800000; /* Match header color */
+    color: white; /* White text on the button */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding inside the button */
+    cursor: pointer; /* Cursor to indicate clickable */
+    border-radius: 5px; /* Rounded corners on the button */
+    width: 100%; /* Full width */
+    font-size: 1em; /* Font size */
+}
+
+.pay-button:hover {
+    background-color: #b30000; /* Darken button color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .payment-form {
+        padding: 20px; /* Less padding on smaller screens */
+    }
+}
