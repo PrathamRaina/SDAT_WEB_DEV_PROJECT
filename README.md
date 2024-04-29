@@ -7,4 +7,4 @@ B00155754 Dylan Rooney - About us and destinations Pages and 4 Validation Test ,
 
 References:                                          
 https://www.php.net/manual/en/function.error-reporting.php          
-https://stackoverflow.com/questions/16933606/error-reportinge-all-does-not-produce-an-error
+https://stackoverflow.com/questions/16933606/error-reportinge-all-does-not-produce-an-error                      https://www.w3schools.com/php/
